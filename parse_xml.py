@@ -7,6 +7,8 @@ def parse_xml():
   xml_content = requests.get(url).content
   soup = BeautifulSoup(xml_content,'xml')
   
-  # your code here
-  
+  result = soup.find("data").contents
+  stripted = result[0].strip()
+  result = stripted
   return result
+  
